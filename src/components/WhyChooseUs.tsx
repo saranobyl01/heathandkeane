@@ -50,7 +50,7 @@ export function WhyChooseUs() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="why-choose-us" ref={ref} className="py-24 bg-zinc-50">
+    <section id="why-choose-us" ref={ref} className="py-24 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -59,11 +59,11 @@ export function WhyChooseUs() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3">Our Advantage</p>
-          <h2 className="text-4xl sm:text-5xl font-black text-zinc-900 mb-4 leading-tight">
+          <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">Our Advantage</p>
+          <h2 className="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">
             Why Choose Heath & Keane
           </h2>
-          <p className="text-lg text-zinc-500 leading-relaxed">
+          <p className="text-lg text-zinc-400 leading-relaxed">
             We don't just connect you with suppliers – we become your strategic partner in global sourcing success.
           </p>
         </motion.div>
@@ -81,13 +81,13 @@ export function WhyChooseUs() {
               <motion.div
                 key={b.title}
                 variants={itemVariants}
-                className="group bg-white rounded-2xl border border-zinc-100 p-7 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group bg-zinc-900 rounded-2xl border border-zinc-800 p-7 hover:border-zinc-700 hover:bg-zinc-800/80 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-zinc-100 mb-5 group-hover:bg-zinc-900 transition-colors duration-300">
-                  <Icon className="h-5 w-5 text-zinc-700 group-hover:text-white transition-colors duration-300" />
+                <div className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-zinc-800 mb-5 group-hover:bg-zinc-700 transition-colors duration-300">
+                  <Icon className="h-5 w-5 text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-base font-bold text-zinc-900 mb-2.5">{b.title}</h3>
-                <p className="text-sm text-zinc-500 leading-relaxed">{b.description}</p>
+                <h3 className="text-base font-bold text-white mb-2.5">{b.title}</h3>
+                <p className="text-sm text-zinc-400 leading-relaxed">{b.description}</p>
               </motion.div>
             )
           })}

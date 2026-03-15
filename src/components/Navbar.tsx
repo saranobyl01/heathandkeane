@@ -33,7 +33,7 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-zinc-100'
+            ? 'bg-zinc-950/85 backdrop-blur-md shadow-sm border-b border-white/5'
             : 'bg-transparent'
         )}
         initial={{ y: -100 }}
@@ -47,13 +47,10 @@ export function Navbar() {
               onClick={() => handleNavClick('#home')}
               className="flex items-center gap-2.5 group"
             >
-              <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center group-hover:bg-zinc-700 transition-colors duration-200">
+              <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center group-hover:bg-zinc-700 transition-colors duration-200">
                 <Globe2 className="w-4 h-4 text-white" />
               </div>
-              <span className={cn(
-                'text-lg font-bold tracking-tight transition-colors duration-300',
-                scrolled ? 'text-zinc-900' : 'text-white'
-              )}>
+              <span className="text-lg font-bold tracking-tight text-white transition-colors duration-300">
                 Heath & Keane
               </span>
             </button>
@@ -64,12 +61,7 @@ export function Navbar() {
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link.href)}
-                  className={cn(
-                    'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-150',
-                    scrolled
-                      ? 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100'
-                      : 'text-white/70 hover:text-white hover:bg-white/10'
-                  )}
+                  className="px-4 py-2 text-sm font-medium rounded-lg text-zinc-300 hover:text-white hover:bg-white/10 transition-all duration-150"
                 >
                   {link.label}
                 </button>
@@ -78,28 +70,14 @@ export function Navbar() {
 
             {/* CTA + Hamburger */}
             <div className="flex items-center gap-3">
-              <button
-                onClick={() => handleNavClick('#contact')}
-                className={cn(
-                  'hidden sm:inline-flex items-center gap-1.5 px-5 h-10 text-sm font-semibold rounded-lg border transition-all duration-200',
-                  scrolled
-                    ? 'bg-zinc-900 text-white border-zinc-900 hover:bg-zinc-700'
-                    : 'bg-white text-zinc-900 border-white hover:bg-zinc-100'
-                )}
-              >
-                Start Sourcing
-                <ChevronRight className="h-3.5 w-3.5" />
-              </button>
+             
 
               <button
-                className="lg:hidden p-2 rounded-lg"
+                className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle menu"
               >
-                {mobileOpen
-                  ? <X className={cn('h-5 w-5', scrolled ? 'text-zinc-900' : 'text-white')} />
-                  : <Menu className={cn('h-5 w-5', scrolled ? 'text-zinc-900' : 'text-white')} />
-                }
+                {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             </div>
           </div>
@@ -144,14 +122,7 @@ export function Navbar() {
                   </button>
                 ))}
               </nav>
-              <div className="p-5 border-t border-zinc-100">
-                <button
-                  onClick={() => handleNavClick('#contact')}
-                  className="w-full h-11 bg-zinc-900 text-white text-sm font-semibold rounded-lg hover:bg-zinc-700 transition-colors"
-                >
-                  Start Sourcing
-                </button>
-              </div>
+              
             </motion.div>
           </motion.div>
         )}

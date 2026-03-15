@@ -168,7 +168,7 @@ export function Hero() {
               </div>
               <div>
                 <div className="text-2xl font-bold text-white">{value}</div>
-                <div className="text-xs text-zinc-500 font-medium">{label}</div>
+                <div className="text-xs text-black font-medium">{label}</div>
               </div>
             </div>
           ))}

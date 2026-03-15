@@ -49,7 +49,7 @@ export function HowItWorks() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">Our Process</p>
+          {/* <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">Our Process</p> */}
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">
             How It Works
           </h2>

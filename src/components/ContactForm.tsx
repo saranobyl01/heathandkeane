@@ -68,7 +68,7 @@ export function ContactForm() {
   }
 
   return (
-    <section id="contact" ref={ref} className="py-24 bg-white">
+    <section id="contact" ref={ref} className="py-24 bg-zinc-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
@@ -78,23 +78,23 @@ export function ContactForm() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3">Get Started</p>
-            <h2 className="text-4xl sm:text-5xl font-black text-zinc-900 mb-5 leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-black text-white mb-5 leading-tight">
               Ready to Start Sourcing?
             </h2>
-            <p className="text-lg text-zinc-500 mb-10 leading-relaxed">
+            <p className="text-lg text-zinc-400 mb-10 leading-relaxed">
               Get in touch with our sourcing experts today. We'll help you find the perfect suppliers for your business needs.
             </p>
 
             {/* Email card */}
-            <div className="flex items-center gap-4 p-5 rounded-xl border border-zinc-100 bg-zinc-50 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-zinc-900 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-4 p-5 rounded-xl border border-zinc-800 bg-zinc-900 mb-8">
+              <div className="w-10 h-10 rounded-xl bg-zinc-800 flex items-center justify-center shrink-0">
                 <Mail className="h-5 w-5 text-white" />
               </div>
               <div>
-                <p className="text-xs text-zinc-400 mb-0.5">Email us directly</p>
+                <p className="text-xs text-zinc-500 mb-0.5">Email us directly</p>
                 <a
                   href="mailto:contact@heathandkeane.com"
-                  className="text-sm font-semibold text-zinc-900 hover:underline"
+                  className="text-sm font-semibold text-white hover:underline"
                 >
                   contact@heathandkeane.com
                 </a>
@@ -105,8 +105,8 @@ export function ContactForm() {
             <ul className="space-y-3">
               {perks.map((p) => (
                 <li key={p} className="flex items-center gap-3">
-                  <CheckCircle2 className="h-4 w-4 text-zinc-900 shrink-0" />
-                  <span className="text-sm text-zinc-600">{p}</span>
+                  <CheckCircle2 className="h-4 w-4 text-white shrink-0" />
+                  <span className="text-sm text-zinc-400">{p}</span>
                 </li>
               ))}
             </ul>
@@ -118,7 +118,7 @@ export function ContactForm() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className="bg-zinc-950 rounded-3xl p-8 md:p-10">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-10">
               {submitted ? (
                 <motion.div
                   className="text-center py-12"
@@ -146,7 +146,7 @@ export function ContactForm() {
                     <Select onValueChange={(v) => setValue('category', v)}>
                       <SelectTrigger
                         id="category"
-                        className={`bg-zinc-900 border-zinc-800 text-white focus:ring-white/20 ${errors.category ? 'border-red-500' : ''}`}
+                        className={`bg-zinc-950 border-zinc-800 text-white focus:ring-white/20 ${errors.category ? 'border-red-500' : ''}`}
                       >
                         <SelectValue placeholder="Select a category" />
                       </SelectTrigger>
@@ -168,7 +168,7 @@ export function ContactForm() {
                       id="email"
                       type="email"
                       placeholder="you@company.com"
-                      className={`bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:ring-white/20 ${errors.email ? 'border-red-500' : ''}`}
+                      className={`bg-zinc-950 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:ring-white/20 ${errors.email ? 'border-red-500' : ''}`}
                       {...register('email')}
                     />
                     {errors.email && <p className="text-red-400 text-xs">{errors.email.message}</p>}
@@ -183,7 +183,7 @@ export function ContactForm() {
                       id="message"
                       placeholder="Tell us about your sourcing requirements..."
                       rows={4}
-                      className={`bg-zinc-900 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:ring-white/20 ${errors.message ? 'border-red-500' : ''}`}
+                      className={`bg-zinc-950 border-zinc-800 text-white placeholder:text-zinc-600 focus-visible:ring-white/20 ${errors.message ? 'border-red-500' : ''}`}
                       {...register('message')}
                     />
                     {errors.message && <p className="text-red-400 text-xs">{errors.message.message}</p>}

@@ -57,8 +57,9 @@ export function WhatWeSource() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="what-we-source" ref={ref} className="py-24 bg-zinc-950 relative">
-      <div className="absolute inset-0 hero-grid opacity-50" />
+    <section id="what-we-source" ref={ref} className="pt-32 pb-24 bg-zinc-950 relative">
+      <div className="absolute inset-0 hero-grid opacity-50 z-0" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
