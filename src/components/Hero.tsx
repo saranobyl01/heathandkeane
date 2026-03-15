@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ArrowRight, Play, Globe, ShieldCheck, TrendingUp } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 import { TextShimmer } from '@/components/ui/text-shimmer'
 
 const stats = [
