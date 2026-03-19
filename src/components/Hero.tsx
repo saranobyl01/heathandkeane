@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ArrowRight, Play, Globe, ShieldCheck, TrendingUp } from 'lucide-react'
+import { Globe, ShieldCheck, TrendingUp } from 'lucide-react'
 import { TextShimmer } from '@/components/ui/text-shimmer'
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 
 const stats = [
   { icon: Globe, value: '50+', label: 'Countries Connected' },
@@ -138,20 +139,16 @@ export function Hero() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <button
+          <InteractiveHoverButton
+            text="Start Sourcing"
             onClick={() => handleScrollTo('#contact')}
-            className="group inline-flex items-center gap-3 bg-white text-zinc-950 font-semibold text-base px-8 h-14 rounded-xl hover:bg-zinc-100 transition-all duration-200 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)]"
-          >
-            Start Sourcing
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </button>
-          <button
+            className="w-48 bg-white text-zinc-950 shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] h-14"
+          />
+          <InteractiveHoverButton
+            text="How It Works"
             onClick={() => handleScrollTo('#how-it-works')}
-            className="group inline-flex items-center gap-3 border border-white/20 text-white font-semibold text-base px-8 h-14 rounded-xl hover:border-white/40 hover:bg-white/5 transition-all duration-200"
-          >
-            <Play className="h-4 w-4 fill-white" />
-            How It Works
-          </button>
+            className="w-48 bg-transparent text-white border-white/20 hover:bg-white/5 h-14"
+          />
         </motion.div>
 
         {/* Stats */}
@@ -168,15 +165,13 @@ export function Hero() {
               </div>
               <div>
                 <div className="text-2xl font-bold text-white">{value}</div>
-                <div className="text-xs text-black font-medium">{label}</div>
+                <div className="text-xs text-white font-medium">{label}</div>
               </div>
             </div>
           ))}
         </motion.div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   )
 }

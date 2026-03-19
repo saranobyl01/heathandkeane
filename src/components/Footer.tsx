@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Calendar, Mail, Phone, MapPin, Clock, Globe2, ArrowRight } from 'lucide-react'
+import { Calendar, Mail, Phone, MapPin, Clock, Globe2 } from 'lucide-react'
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 
 export function Footer() {
   const ref = useRef<HTMLDivElement>(null)
@@ -33,13 +34,11 @@ export function Footer() {
           <p className="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Our sourcing experts are available around the clock to answer your questions and get your sourcing journey started.
           </p>
-          <button
+          <InteractiveHoverButton
+            text="Schedule a Call"
             onClick={() => handleScrollTo('#contact')}
-            className="group inline-flex items-center gap-3 bg-white text-zinc-950 font-bold text-base px-10 h-14 rounded-xl hover:bg-zinc-100 transition-all duration-300"
-          >
-            Schedule a Call
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+            className="w-56 bg-white text-zinc-950 h-14"
+          />
         </motion.div>
       </section>
 

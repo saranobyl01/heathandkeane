@@ -3,8 +3,9 @@ import { motion, useInView } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Send, CheckCircle2, Mail, Loader2 } from 'lucide-react'
+import { CheckCircle2, Mail } from 'lucide-react'
 import { Input } from '@/components/ui/input'
+import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import {
@@ -189,17 +190,12 @@ export function ContactForm() {
                     {errors.message && <p className="text-red-400 text-xs">{errors.message.message}</p>}
                   </div>
 
-                  <button
+                  <InteractiveHoverButton
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-12 bg-white text-zinc-950 text-sm font-bold rounded-xl hover:bg-zinc-100 transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-60"
-                  >
-                    {isSubmitting ? (
-                      <><Loader2 className="h-4 w-4 animate-spin" /> Sending...</>
-                    ) : (
-                      <><Send className="h-4 w-4" /> Send Inquiry</>
-                    )}
-                  </button>
+                    text={isSubmitting ? "Sending..." : "Send Inquiry"}
+                    className="w-full h-12 bg-white text-zinc-950 opacity-100 disabled:opacity-60"
+                  />
                 </form>
               )}
             </div>
