@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { BarChart3, Clock, Shield, Globe, HeadphonesIcon, TrendingUp } from 'lucide-react'
 import { FeaturesSectionWithHoverEffects } from '@/components/ui/feature-section-with-hover-effects'
+import { TextEffect } from '@/components/ui/text-effect'
 
 const benefits = [
   {
@@ -50,13 +51,15 @@ export function WhyChooseUs() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">Our Advantage</p>
+          <TextEffect as="p" per="char" preset="fade" trigger={inView} className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">
+            Our Advantage
+          </TextEffect>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">
             Why Choose Heath & Keane
           </h2>
-          <p className="text-lg text-zinc-400 leading-relaxed">
+          <TextEffect per="word" preset="fade" trigger={inView} className="text-lg text-zinc-400 leading-relaxed">
             We don't just connect you with suppliers – we become your strategic partner in global sourcing success.
-          </p>
+          </TextEffect>
         </motion.div>
 
         {/* Grid Using New Component */}

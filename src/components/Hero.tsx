@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Globe, ShieldCheck, TrendingUp } from 'lucide-react'
 import { TextShimmer } from '@/components/ui/text-shimmer'
+import { TextEffect } from '@/components/ui/text-effect'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 
 const stats = [
@@ -93,12 +94,9 @@ export function Hero() {
           transition={{ duration: 0.5 }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-          <TextShimmer
-            className="text-xs font-semibold tracking-widest uppercase [--base-color:theme(colors.zinc.500)] [--base-gradient-color:theme(colors.white)]"
-            duration={2.5}
-          >
+          <TextEffect as="p" per="char" preset="fade" className="text-xs font-semibold tracking-widest uppercase text-zinc-400">
             Global Sourcing Experts
-          </TextShimmer>
+          </TextEffect>
         </motion.div>
 
         {/* Headline */}
@@ -121,16 +119,15 @@ export function Hero() {
           </TextShimmer>
         </motion.h1>
 
-        {/* Sub */}
-        <motion.p
+        <TextEffect
+          per="word"
+          preset="fade"
+          delay={0.2}
           className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-12 font-light"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.2 }}
         >
           Connect with verified manufacturers worldwide. We handle quality control,
           logistics, and compliance so you can focus on growing your business.
-        </motion.p>
+        </TextEffect>
 
         {/* CTAs */}
         <motion.div

@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Search, Handshake, ShieldCheck, Truck } from 'lucide-react'
 import { GlowingEffect } from '@/components/ui/glowing-effect'
+import { TextEffect } from '@/components/ui/text-effect'
 
 const steps = [
   {
@@ -53,9 +54,9 @@ export function HowItWorks() {
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">
             How It Works
           </h2>
-          <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">
+          <TextEffect per="word" preset="fade" trigger={inView} className="text-lg text-zinc-400 max-w-2xl mx-auto font-light leading-relaxed">
             Our proven 4-step process ensures you get the right products from the right suppliers, every time.
-          </p>
+          </TextEffect>
         </motion.div>
 
         {/* Steps grid */}

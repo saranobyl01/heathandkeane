@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { ShoppingCart, Cpu, Shirt, Home, Settings, Factory, ArrowRight } from 'lucide-react'
 import { GlowingEffect } from '@/components/ui/glowing-effect'
+import { TextEffect } from '@/components/ui/text-effect'
 
 const categories = [
   {
@@ -68,15 +69,15 @@ export function WhatWeSource() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">
+          <TextEffect as="p" per="char" preset="fade" trigger={inView} className="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-3">
             Product Categories
-          </p>
+          </TextEffect>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">
             What We Source
           </h2>
-          <p className="text-lg text-zinc-400 leading-relaxed font-light">
+          <TextEffect per="word" preset="fade" trigger={inView} className="text-lg text-zinc-400 leading-relaxed font-light">
             From consumer electronics to industrial machinery, we connect you with verified suppliers across every major product category.
-          </p>
+          </TextEffect>
         </motion.div>
 
         {/* Grid */}

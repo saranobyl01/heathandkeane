@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Calendar, Mail, Phone, MapPin, Clock, Globe2 } from 'lucide-react'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
+import { TextEffect } from '@/components/ui/text-effect'
 
 export function Footer() {
   const ref = useRef<HTMLDivElement>(null)
@@ -31,9 +32,9 @@ export function Footer() {
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-5">
             Need Immediate Help?
           </h2>
-          <p className="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <TextEffect per="word" preset="fade" trigger={inView} className="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Our sourcing experts are available around the clock to answer your questions and get your sourcing journey started.
-          </p>
+          </TextEffect>
           <InteractiveHoverButton
             text="Schedule a Call"
             onClick={() => handleScrollTo('#contact')}
@@ -68,7 +69,9 @@ export function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Quick Links</h4>
+              <TextEffect as="h4" per="char" preset="fade" className="font-bold text-white mb-6 uppercase tracking-widest text-xs">
+                Quick Links
+              </TextEffect>
               <ul className="space-y-3">
                 {[
                   { label: 'Home', href: '#home' },
@@ -91,7 +94,9 @@ export function Footer() {
 
             {/* Contact */}
             <div>
-              <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Contact Us</h4>
+              <TextEffect as="h4" per="char" preset="fade" className="font-bold text-white mb-6 uppercase tracking-widest text-xs">
+                Contact Us
+              </TextEffect>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <Mail className="h-4 w-4 text-zinc-500 mt-0.5 shrink-0" />

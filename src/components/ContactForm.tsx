@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { CheckCircle2, Mail } from 'lucide-react'
 import { Input } from '@/components/ui/input'
+import { TextEffect } from '@/components/ui/text-effect'
 import { InteractiveHoverButton } from '@/components/ui/interactive-hover-button'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
@@ -78,13 +79,15 @@ export function ContactForm() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3">Get Started</p>
+            <TextEffect as="p" per="char" preset="fade" trigger={inView} className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3">
+              Get Started
+            </TextEffect>
             <h2 className="text-4xl sm:text-5xl font-black text-white mb-5 leading-tight">
               Ready to Start Sourcing?
             </h2>
-            <p className="text-lg text-zinc-400 mb-10 leading-relaxed">
+            <TextEffect per="word" preset="fade" delay={0.15} trigger={inView} className="text-lg text-zinc-400 mb-10 leading-relaxed">
               Get in touch with our sourcing experts today. We'll help you find the perfect suppliers for your business needs.
-            </p>
+            </TextEffect>
 
             {/* Email card */}
             <div className="flex items-center gap-4 p-5 rounded-xl border border-zinc-800 bg-zinc-900 mb-8">
